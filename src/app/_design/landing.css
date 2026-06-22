@@ -403,7 +403,7 @@
           radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.2) 26%, transparent 44%),
           linear-gradient(145deg, rgba(13, 21, 30, 0.96), rgba(25, 39, 50, 0.86) 52%, rgba(242, 247, 249, 0.76));
         overflow: hidden;
-        perspective: 1200px;
+        perspective: 620px;
       }
 
       .wow-stage::before {
@@ -428,33 +428,33 @@
 
       .vial-orbit {
         position: absolute;
-        inset: 42px 90px 34px;
+        inset: 18px 60px 18px;
         z-index: 3;
         display: grid;
         place-items: center;
         transform-style: preserve-3d;
-        transform: rotateX(8deg) rotateY(var(--spin)) translateY(var(--float));
+        transform: rotateX(11deg) rotateY(var(--spin)) translateY(var(--float)) scale(1.08);
         transition: transform 140ms ease-out;
       }
 
       .vial-3d {
         position: relative;
-        width: 260px;
-        height: 440px;
+        width: 280px;
+        height: 560px;
         transform-style: preserve-3d;
-        filter: drop-shadow(0 42px 60px rgba(0, 0, 0, 0.38));
+        filter: drop-shadow(0 56px 70px rgba(0, 0, 0, 0.45));
       }
 
       .vial-shadow {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -22px;
-        width: 190px;
-        height: 38px;
+        bottom: -28px;
+        width: 220px;
+        height: 46px;
         border-radius: 50%;
-        background: rgba(0, 0, 0, 0.3);
-        filter: blur(12px);
+        background: rgba(0, 0, 0, 0.34);
+        filter: blur(14px);
       }
 
       .vial-photo {
