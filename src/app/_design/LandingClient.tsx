@@ -18,8 +18,10 @@ export default function LandingClient({ html }: { html: string }) {
       const progress = Math.min(1, Math.max(0, window.scrollY / distance));
       const spin = -18 + progress * 460;
       const float = Math.sin(progress * Math.PI) * -18;
+      const shine = ((spin % 360) + 360) % 360 / 360 * 100;
       wowStage.style.setProperty("--spin", `${spin}deg`);
       wowStage.style.setProperty("--float", `${float}px`);
+      wowStage.style.setProperty("--shine", `${shine}`);
       scrollTicking = false;
     };
 
