@@ -1,9 +1,4 @@
 "use server";
-set -e
-mkdir -p src/app/supplier "src/app/share/[token]"
-
-cat > src/app/supplier/actions.ts <<'PUSHEOF1'
-"use server";
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
