@@ -4,12 +4,12 @@ import { Suspense } from "react";
 import "../_design/login.css";
 import LoginClient from "../_design/LoginClient";
 
-export default function LoginPage() {
-  const html = fs.readFileSync(
-    path.join(process.cwd(), "src/app/_design/login.body.html"),
-    "utf8"
-  );
+const html = fs.readFileSync(
+  path.join(process.cwd(), "src/app/_design/login.body.html"),
+  "utf8"
+);
 
+export default function LoginPage() {
   return (
     <Suspense>
       <LoginClient html={html} />

@@ -6,22 +6,18 @@ import { createClient } from "@/lib/supabase/client";
 
 const copy = {
   brand: {
-    username: "",
     kicker: "Espace marque",
     title: "Connectez-vous au cockpit marque.",
     text: "Pilotez les projets, assemblez les fiches fournisseur, verifiez les delais et gardez la derniere version validee du produit fini.",
     button: "Entrer cote marque",
-    image: "/assets/product-violet",
     signals: ["Passport produit", "Derniere version validee", "Delais", "Risque visible avant PO", "Securite", "Acces marque dedie"],
     metrics: ["OTIF", "100%", "BAT", "V5", "Launch", "-64 j"],
   },
   supplier: {
-    username: "",
     kicker: "Espace fournisseur",
     title: "Connectez-vous au portail fournisseur.",
     text: "Renseignez delais, cahier des charges, numero de TVA, contraintes d'ouverture, couts et devis partageables.",
     button: "Entrer cote fournisseur",
-    image: "/assets/product-vial-light",
     signals: ["Fiche semi-finie", "Partageable par lien", "Production", "Delai standard et express", "Couts", "Devis pret a transmettre"],
     metrics: ["MOQ", "10k", "Stock", "24k", "Express", "14 j"],
   },
@@ -59,9 +55,6 @@ export default function LoginClient({ html }: { html: string }) {
     set("#metricTwo", active.metrics[3]);
     set("#metricThreeLabel", active.metrics[4]);
     set("#metricThree", active.metrics[5]);
-
-    const productImage = root.querySelector<HTMLImageElement>("#productImage");
-    if (productImage) productImage.src = active.image;
 
     root.querySelector("#brandSwitch")?.classList.toggle("active", space === "brand");
     root.querySelector("#supplierSwitch")?.classList.toggle("active", space === "supplier");
