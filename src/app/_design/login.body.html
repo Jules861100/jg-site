@@ -1,0 +1,59 @@
+<main class="page">
+      <div class="login-shell">
+        <section class="panel">
+          <div class="intro">
+            <a class="brand" href="/">
+              <span>T</span>
+              <strong>TraJeKt</strong>
+            </a>
+            <p class="eyebrow" id="spaceKicker">Connexion securisee</p>
+            <h1 id="loginTitle">Entrez dans votre espace TraJeKt.</h1>
+            <p id="loginCopy">Un acces propre, separe et operationnel pour retrouver projets, fournisseurs, composants, delais et fiches produit validees.</p>
+          </div>
+
+          <div class="space-switch" aria-label="Choix espace">
+            <a id="brandSwitch" href="/login?space=brand">Espace marque</a>
+            <a id="supplierSwitch" href="/login?space=supplier">Espace fournisseur</a>
+          </div>
+
+          <form id="loginForm">
+            <label>Identifiant
+              <input id="usernameInput" name="username" type="email" autocomplete="username">
+            </label>
+            <label>Mot de passe
+              <input id="passwordInput" name="password" type="password" autocomplete="current-password">
+            </label>
+            <button class="submit" id="loginButton" type="submit">Se connecter</button>
+            <div class="error" id="error" aria-live="polite"></div>
+          </form>
+
+          <a class="back-link" href="/">Retour a la page d'accueil</a>
+        </section>
+
+        <section class="visual" aria-label="Visuel connexion TraJeKt">
+          <div class="product-card">
+            <img id="productImage" src="/assets/product-violet" alt="Packshot parfum TraJeKt">
+          </div>
+          <article class="signal-card top">
+            <span id="signalOneLabel">Passport produit</span>
+            <strong id="signalOne">Derniere version validee</strong>
+            <small>BAT, Pantone, dimensions et documents.</small>
+          </article>
+          <article class="signal-card side">
+            <span id="signalTwoLabel">Delais</span>
+            <strong id="signalTwo">Risque visible avant PO</strong>
+            <small>Lead time standard, express et marge restante.</small>
+          </article>
+          <article class="signal-card bottom">
+            <span id="signalThreeLabel">Securite</span>
+            <strong id="signalThree">Acces separe par espace</strong>
+            <small>Marques et fournisseurs ne voient pas le meme cockpit.</small>
+          </article>
+          <div class="status-grid">
+            <article><span id="metricOneLabel">OTIF</span><strong id="metricOne">100%</strong><small>fournisseur prioritaire</small></article>
+            <article><span id="metricTwoLabel">BAT</span><strong id="metricTwo">V5</strong><small>version active</small></article>
+            <article><span id="metricThreeLabel">Launch</span><strong id="metricThree">-64 j</strong><small>marge pilotee</small></article>
+          </div>
+        </section>
+      </div>
+    </main>

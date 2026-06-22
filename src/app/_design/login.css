@@ -1,0 +1,432 @@
+
+      :root {
+        --ink: #071018;
+        --muted: #65727d;
+        --line: rgba(7, 16, 24, 0.12);
+        --panel: rgba(255, 255, 255, 0.72);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+        --green: #c8ff3d;
+        --mint: #6ee7d8;
+        --blue: #93b7ff;
+        --pink: #f2b7c6;
+        --dark: #111b24;
+        --radius: 8px;
+        --shadow: 0 34px 110px rgba(17, 30, 42, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 20% 8%, rgba(200, 255, 61, 0.22), transparent 30%),
+          radial-gradient(circle at 82% 12%, rgba(147, 183, 255, 0.26), transparent 28%),
+          linear-gradient(120deg, rgba(246, 248, 250, 0.98), rgba(226, 238, 243, 0.94) 48%, rgba(250, 249, 246, 0.98));
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(7, 16, 24, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(7, 16, 24, 0.045) 1px, transparent 1px);
+        background-size: 54px 54px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 80%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+      }
+
+      .login-shell {
+        width: min(1180px, 100%);
+        min-height: min(760px, calc(100vh - 36px));
+        display: grid;
+        grid-template-columns: minmax(360px, 0.88fr) minmax(460px, 1.12fr);
+        gap: 18px;
+      }
+
+      .panel,
+      .visual,
+      .identity-card,
+      .signal-card {
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        border-radius: var(--radius);
+        background: var(--panel);
+        backdrop-filter: blur(28px);
+        box-shadow: var(--shadow);
+      }
+
+      .panel {
+        display: grid;
+        align-content: space-between;
+        gap: 26px;
+        padding: clamp(24px, 4vw, 46px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 860;
+      }
+
+      .brand span {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: var(--radius);
+        background: linear-gradient(135deg, var(--green), var(--mint));
+        box-shadow: 0 16px 46px rgba(93, 217, 189, 0.26);
+      }
+
+      .eyebrow {
+        width: fit-content;
+        margin: 0;
+        border: 1px solid rgba(110, 231, 216, 0.28);
+        border-radius: var(--radius);
+        padding: 7px 10px;
+        color: #087262;
+        background: rgba(110, 231, 216, 0.16);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 620px;
+        font-size: clamp(42px, 5vw, 72px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      .intro {
+        display: grid;
+        gap: 15px;
+      }
+
+      .space-switch {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.56);
+      }
+
+      .space-switch a {
+        min-height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .space-switch a.active {
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--green), var(--mint));
+        box-shadow: 0 12px 26px rgba(110, 231, 216, 0.2);
+      }
+
+      form {
+        display: grid;
+        gap: 12px;
+      }
+
+      label {
+        display: grid;
+        gap: 7px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 840;
+        text-transform: uppercase;
+      }
+
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0 13px;
+        outline: 0;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      input:focus {
+        border-color: rgba(110, 231, 216, 0.78);
+        box-shadow: 0 0 0 4px rgba(110, 231, 216, 0.16);
+      }
+
+      .submit {
+        min-height: 50px;
+        border: 1px solid rgba(7, 16, 24, 0.12);
+        border-radius: var(--radius);
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--green), var(--mint));
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .submit:disabled {
+        cursor: wait;
+        opacity: 0.72;
+      }
+
+      .error {
+        min-height: 18px;
+        color: #a03845;
+        font-size: 13px;
+      }
+
+      .identity-card {
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.62);
+        box-shadow: none;
+      }
+
+      .identity-row {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .identity-row span {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 840;
+        text-transform: uppercase;
+      }
+
+      .identity-row strong {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+      }
+
+      .back-link {
+        width: fit-content;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .visual {
+        position: relative;
+        min-height: 660px;
+        display: grid;
+        grid-template-rows: minmax(430px, 1fr) auto;
+        gap: 12px;
+        padding: 18px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 42% 24%, rgba(255, 255, 255, 0.92), transparent 31%),
+          linear-gradient(145deg, rgba(13, 21, 30, 0.96), rgba(25, 39, 50, 0.88) 48%, rgba(242, 247, 249, 0.76));
+      }
+
+      .visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.95), transparent 72%);
+      }
+
+      .product-card {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        min-height: 430px;
+      }
+
+      .product-card img {
+        width: min(520px, 82%);
+        max-height: 520px;
+        object-fit: contain;
+        filter: drop-shadow(0 46px 70px rgba(0, 0, 0, 0.34));
+      }
+
+      .signal-card {
+        position: absolute;
+        z-index: 3;
+        width: 220px;
+        padding: 12px;
+        color: #fff;
+        background: rgba(10, 18, 25, 0.58);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+      }
+
+      .signal-card.top {
+        left: 18px;
+        top: 18px;
+      }
+
+      .signal-card.side {
+        right: 18px;
+        top: 116px;
+      }
+
+      .signal-card.bottom {
+        left: 18px;
+        bottom: 124px;
+      }
+
+      .signal-card span,
+      .signal-card small {
+        display: block;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 11px;
+      }
+
+      .signal-card strong {
+        display: block;
+        margin: 4px 0;
+        font-size: 15px;
+      }
+
+      .status-grid {
+        position: relative;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .status-grid article {
+        min-height: 94px;
+        display: grid;
+        align-content: space-between;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        padding: 12px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+      }
+
+      .status-grid span,
+      .status-grid small {
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 11px;
+        font-weight: 820;
+        text-transform: uppercase;
+      }
+
+      .status-grid strong {
+        font-size: 16px;
+      }
+
+      @media (max-width: 920px) {
+        .login-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .visual {
+          min-height: 560px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .page {
+          padding: 12px;
+        }
+
+        .panel,
+        .visual {
+          padding: 18px;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .space-switch,
+        .status-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .identity-row {
+          grid-template-columns: 1fr;
+        }
+
+        .visual {
+          min-height: 640px;
+        }
+
+        .signal-card {
+          width: min(210px, calc(100% - 36px));
+        }
+
+        .signal-card.side {
+          top: 96px;
+        }
+
+        .signal-card.bottom {
+          bottom: 220px;
+        }
+
+        .product-card img {
+          width: 94%;
+        }
+      }
+    
